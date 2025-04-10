@@ -93,6 +93,8 @@
                         <input type="text" placeholder="Ghi chú" name="note" id="">
                     </div>
                     <button class="main-btn">Gửi đơn hàng</button>
+
+                    <input type="hidden" name="total_amount" value="{{ $total }}">
                 </div>
             </div>
         </div>

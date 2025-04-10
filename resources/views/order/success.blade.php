@@ -1,19 +1,18 @@
+
 @extends('main')
+
 @section('content')
 <section class="order-confirm p-to-top">
     <div class="container">
-        <div class="row-flex row-flex-product-detail">
-            <p>Xác nhận đơn hàng <span style="font-weight: bold;">#37 Thành công</span></p>
-        </div>
-        <div class="row-flex">
-            <div class="order-confirm-content">
-                <p>Đơn hàng của bạn đã được xác nhận <span style="font-weight: bold;">Thành công</span>!<br>
-                    <span style="font-size: small;">Chúng tôi sẽ <span style="font-style: italic;">Giao hàng</span> trong thời gian tối đa là 3 ngày làm việc</span>
-                </p>
-                <br>
-                <button class="main-btn">Tiếp tục mua hàng</button>
-            </div>
-        </div>
+        @if (session('success'))
+            <h1 style="color: green;">{{ session('success') }}</h1>
+            <p>Mã đơn hàng: {{ session('order_id') }}</p>
+            <p>Tên khách hàng: {{ session('order_name') }}</p>
+        @elseif (session('error'))
+            <h1 style="color: red;">{{ session('error') }}</h1>
+        @endif
+        <br>
+        <a href="/" class="main-btn">Quay về trang chủ</a>
     </div>
 </section>
 @endsection

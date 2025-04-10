@@ -59,6 +59,10 @@ Route::get('/cart', [FrontendController::class, 'show_cart']);
 Route::get('/cart/delete/{id}', [FrontendController::class, 'delete_cart']);
 Route::post('/cart/update', [FrontendController::class, 'update_cart']);
 Route::post('/cart/send',[FrontendController::class,'send_cart']);
+Route::get('/vnpay/return', [FrontendController::class, 'vnpay_return'])->name('vnpay.return');
+Route::get('/order/success', function () {
+    return view('order.success');
+})->name('views.order.success');
 
 Route::get('/login', [LoginController::class, 'login']);
 Route::post('/login_user', [LoginController::class, 'login_user'])->name('login_user');
